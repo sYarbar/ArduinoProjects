@@ -13,7 +13,7 @@ close the hand is.
 #include <Servo.h>
 Servo myservo;
 int pos = 0; 
-const int analoglnPin = A0; //Make a name for A0
+const int analoglnPin = A0; 
 int sensorValue = 0; 
 int newPos = 0; //used for desired position using sensor data
 
