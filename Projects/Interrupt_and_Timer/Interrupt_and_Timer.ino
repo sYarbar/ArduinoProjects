@@ -1,8 +1,22 @@
+/*
+-------------------------------------------------------------------------------
+Interrupt_and_Timer
+The hardware portion of this contains 2 button switches, one connected
+to pin 8, one to pin 7, and an LED connected to pin 6.
+
+Initially the timer interrupt is set to a 1s delay in which it turns the LED
+on or off. The switch interrupts will double or half the amount of time 
+between the timer interrupts, will not change beyond a maximum speed, or 
+minimum speed.
+-------------------------------------------------------------------------------
+*/
+
 #include <avr/interrupt.h>
 #include <avr/sleep.h>
-int count1 = 15625; //arbitrary number of clockcycles
-int maximumCount = 15625*2; //0.5Hz
-int minimumCount = 15625/8; //8Hz
+//Slowest speed at 0.5Hz, and fastest at 8Hz
+int count1 = 15625; //number of clock cycles to count
+int maximumCount = 15625*2; 
+int minimumCount = 15625/8; 
 int state8 = 0; //variable used to make switch interrupt once per press
 int state7 = 0;
 
